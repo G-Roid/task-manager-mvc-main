@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/161e1d0a9b.js" crossorigin="anonymous"></script>
+    <title>Task - Manager</title>
+</head>
+<body>
+    <span><a href="/">Home</a></span>
+    <h1>Current Tasks</h1>
+    <% for(let i = 0; i < tasks.length; i++) {%>
+        <li>
+            <span class="task"><%= tasks[i].thing %></span><i class="fa-solid fa-bomb"></i>
+        </li>
+    <%} %>
+
+    <form action="/tasks/addTask" method="post">
+        <input type="text" name="newTask" id="newTask" autocomplete="off" autofocus>
+        <!-- <button id="addTaskBtn" type="submit" name="newTask">ADD</button> -->
+        <input type="submit">
+    </form>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
