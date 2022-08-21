@@ -1,12 +1,12 @@
-const { response } = require('express')
+// const { response } = require('express')
 const Tasks = require('../models/Tasks')
 
 module.exports = {
     getTasks: async (request, response) => {
         try {
             const projectTasks = await Tasks.find()
-            console.log(projectTasks)
             response.render('tasks.ejs', {tasks: projectTasks})
+            // response.redirect('/task')
             
         } catch (error) {
             console.log(error)
