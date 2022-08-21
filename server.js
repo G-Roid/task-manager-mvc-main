@@ -11,11 +11,12 @@ require('dotenv').config({path: './config/.env'})
 connectDB()
 
 //Middleware
-app.use(cors())
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
+app.use(cors())
 
 app.use('/', homeRoutes)
 app.use('/tasks', taskRouters)
