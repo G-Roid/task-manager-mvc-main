@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = 8000
+const cors = require('cors')
 const connectDB = require('./config/dataBase')
 const homeRoutes = require('./routes/home')
 const taskRouters = require('./routes/tasks')
@@ -10,6 +11,7 @@ require('dotenv').config({path: './config/.env'})
 connectDB()
 
 //Middleware
+app.use(cors)
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
